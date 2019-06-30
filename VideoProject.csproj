@@ -189,11 +189,24 @@
     <Compile Include="Migrations\201906301441574_InitialModel.Designer.cs">
       <DependentUpon>201906301441574_InitialModel.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201906301530565_IsSubscribedToNewsLetterAddedToCustomer.cs" />
+    <Compile Include="Migrations\201906301530565_IsSubscribedToNewsLetterAddedToCustomer.Designer.cs">
+      <DependentUpon>201906301530565_IsSubscribedToNewsLetterAddedToCustomer.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201906301554046_MembershipType is added.cs" />
+    <Compile Include="Migrations\201906301554046_MembershipType is added.Designer.cs">
+      <DependentUpon>201906301554046_MembershipType is added.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201906301557434_Populate MembershipTypes.cs" />
+    <Compile Include="Migrations\201906301557434_Populate MembershipTypes.Designer.cs">
+      <DependentUpon>201906301557434_Populate MembershipTypes.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
     <Compile Include="Models\Customer.cs" />
     <Compile Include="Models\IdentityModels.cs" />
     <Compile Include="Models\ManageViewModels.cs" />
+    <Compile Include="Models\MembershipType.cs" />
     <Compile Include="Models\Movie.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Startup.cs" />
@@ -283,6 +296,15 @@
   <ItemGroup>
     <EmbeddedResource Include="Migrations\201906301441574_InitialModel.resx">
       <DependentUpon>201906301441574_InitialModel.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201906301530565_IsSubscribedToNewsLetterAddedToCustomer.resx">
+      <DependentUpon>201906301530565_IsSubscribedToNewsLetterAddedToCustomer.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201906301554046_MembershipType is added.resx">
+      <DependentUpon>201906301554046_MembershipType is added.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201906301557434_Populate MembershipTypes.resx">
+      <DependentUpon>201906301557434_Populate MembershipTypes.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

@@ -1,0 +1,21 @@
+﻿@model VideoProject.ViewModels.RandomMovieViewModel
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Customers</h2>
+
+<table class="table table-bordered table-condensed">
+    <tr>
+        <th>Customer</th>
+    </tr>
+    @foreach (var cust in Model.Customers)
+    {
+        <tr>
+            <td>
+                <p>@Html.ActionLink(@cust.Name.ToString(), "Details/" + cust.Id, "Customers")</p>
+            </td>
+        </tr>
+    }
+</table>

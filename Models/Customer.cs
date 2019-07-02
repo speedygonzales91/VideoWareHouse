@@ -1,4 +1,5 @@
-﻿using System.ComponentModel.DataAnnotations;
+﻿using System;
+using System.ComponentModel.DataAnnotations;
 
 namespace VideoProject.Models
 {
@@ -16,5 +17,7 @@ namespace VideoProject.Models
         public MembershipType MembershipType { get; set; }
         //Foreign key
         public byte MembershipTypeId { get; set; }
+
+        public DateTime? BirthDate { get; set; }
     }
 }

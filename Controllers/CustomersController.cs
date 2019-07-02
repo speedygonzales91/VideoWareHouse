@@ -36,9 +36,9 @@ namespace VideoProject.Controllers
         public ActionResult Details(int id)
         {
 
-            if (id < _context.Customers.ToList().Count)
+            if (id <= _context.Customers.ToList().Count)
             {
-                var customer = _context.Customers.SingleOrDefault(x => x.Id == id);
+                var customer = _context.Customers.Include(c => c.MembershipType).SingleOrDefault(x => x.Id == id);
                 return View(customer);
             }
             return View("NoCustomer");

@@ -13,5 +13,7 @@ namespace VideoProject.Models
         public byte DurationInMoths { get; set; }
 
         public byte DiscountRate { get; set; }
+
+        public string Name { get; set; }
     }
 }

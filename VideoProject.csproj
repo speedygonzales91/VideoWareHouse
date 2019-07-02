@@ -205,6 +205,14 @@
     <Compile Include="Migrations\201906301609176_ApplyDataAnnotation To Customer.Designer.cs">
       <DependentUpon>201906301609176_ApplyDataAnnotation To Customer.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201907020711393_Name property is added to membershipType.cs" />
+    <Compile Include="Migrations\201907020711393_Name property is added to membershipType.Designer.cs">
+      <DependentUpon>201907020711393_Name property is added to membershipType.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201907020715132_Update Membership table with Name datas.cs" />
+    <Compile Include="Migrations\201907020715132_Update Membership table with Name datas.Designer.cs">
+      <DependentUpon>201907020715132_Update Membership table with Name datas.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
     <Compile Include="Models\Customer.cs" />
@@ -312,6 +320,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201906301609176_ApplyDataAnnotation To Customer.resx">
       <DependentUpon>201906301609176_ApplyDataAnnotation To Customer.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201907020711393_Name property is added to membershipType.resx">
+      <DependentUpon>201907020711393_Name property is added to membershipType.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201907020715132_Update Membership table with Name datas.resx">
+      <DependentUpon>201907020715132_Update Membership table with Name datas.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

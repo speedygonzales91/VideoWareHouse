@@ -10,12 +10,14 @@
     <tr>
         <th>Customer</th>
         <th>Discount rate</th>
+        <th>Discount name</th>
     </tr>
     @foreach (var cust in Model)
     {
-        <tr>
-            <td>@Html.ActionLink(@cust.Name.ToString(), "Details/" + cust.Id, "Customers")</td>
-            <td>@cust.MembershipType.DiscountRate%</td>
-        </tr>
+<tr>
+    <td>@Html.ActionLink(@cust.Name.ToString(), "Details/" + cust.Id, "Customers")</td>
+    <td>@cust.MembershipType.DiscountRate%</td>
+    <td>@cust.MembershipType.Name</td>
+</tr>
     }
 </table>

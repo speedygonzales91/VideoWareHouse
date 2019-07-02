@@ -217,9 +217,14 @@
     <Compile Include="Migrations\201907020810446_Update Customer with BirthDate.Designer.cs">
       <DependentUpon>201907020810446_Update Customer with BirthDate.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201907020845133_Movies + Genre model changed.cs" />
+    <Compile Include="Migrations\201907020845133_Movies + Genre model changed.Designer.cs">
+      <DependentUpon>201907020845133_Movies + Genre model changed.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
     <Compile Include="Models\Customer.cs" />
+    <Compile Include="Models\Genre.cs" />
     <Compile Include="Models\IdentityModels.cs" />
     <Compile Include="Models\ManageViewModels.cs" />
     <Compile Include="Models\MembershipType.cs" />
@@ -333,6 +338,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201907020810446_Update Customer with BirthDate.resx">
       <DependentUpon>201907020810446_Update Customer with BirthDate.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201907020845133_Movies + Genre model changed.resx">
+      <DependentUpon>201907020845133_Movies + Genre model changed.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

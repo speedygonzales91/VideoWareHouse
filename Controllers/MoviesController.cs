@@ -5,15 +5,29 @@ using System.Web;
 using System.Web.Mvc;
 using VideoProject.Models;
 using VideoProject.ViewModels;
+using System.Data.Entity;
 
 namespace VideoProject.Controllers
 {
     public class MoviesController : Controller
     {
+        private ApplicationDbContext _context;
+
+        public MoviesController()
+        {
+            _context = new ApplicationDbContext();
+        }
+
+        protected override void Dispose(bool disposing)
+        {
+            _context.Dispose();
+        }
+
         //GET: Movies
         public ActionResult Index()
         {
-            return View();
+            var movies = _context.Movies.Include(g => g.Genre).ToList();
+            return View(movies);
         }
 
         // GET: Movies/Random
@@ -57,6 +71,17 @@ namespace VideoProject.Controllers
         public ActionResult ByReleaseDate(int year, int month)
         {
             return Content($"year={year},month={month}");
+        }
+
+        public ActionResult Details (int id)
+        {
+            if (id <= _context.Movies.ToList().Count)
+            {
+                var movie = _context.Movies.Include(g => g.Genre).SingleOrDefault(x => x.Id == id);
+
+                return View(movie);
+            }
+            return HttpNotFound();
         }
     }
 }

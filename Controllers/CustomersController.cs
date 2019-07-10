@@ -43,5 +43,10 @@ namespace VideoProject.Controllers
             }
             return View("NoCustomer");
         }
+
+        public ActionResult New()
+        {
+            return View();
+        }
     }
 }

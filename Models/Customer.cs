@@ -18,6 +18,7 @@ namespace VideoProject.Models
         //Foreign key
         public byte MembershipTypeId { get; set; }
 
+        [Display(Name = "Date of Birth")]
         public DateTime? BirthDate { get; set; }
     }
 }

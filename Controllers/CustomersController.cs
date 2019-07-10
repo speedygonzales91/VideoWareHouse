@@ -47,7 +47,7 @@ namespace VideoProject.Controllers
         public ActionResult New()
         {
             var membershipTypes = _context.MembershipTypes.ToList();
-            var customerViewModel = new NewCustomerViewModel()
+            var customerViewModel = new CustomerFormViewModel()
             {
                 MembershipTypes = membershipTypes
             };
@@ -57,7 +57,26 @@ namespace VideoProject.Controllers
         [System.Web.Http.HttpPost]
         public ActionResult Create(Customer customer)
         {
-            return View();
+            _context.Customers.Add(customer);
+            _context.SaveChanges();
+            return RedirectToAction("Index", "Customers");
+        }
+
+        public ActionResult Edit(int? id)
+        {
+            var customer = _context.Customers.SingleOrDefault(c => c.Id == id);
+
+            if (customer == null)
+            {
+                return HttpNotFound();
+            }
+
+            var editViewModel = new CustomerFormViewModel()
+            {
+                Customer = customer,
+                MembershipTypes = _context.MembershipTypes.ToList()
+            };
+            return View("New",editViewModel);
         }
     }
 }

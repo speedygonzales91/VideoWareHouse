@@ -46,7 +46,12 @@ namespace VideoProject.Controllers
 
         public ActionResult New()
         {
-            return View();
+            var membershipTypes = _context.MembershipTypes.ToList();
+            var customerViewModel = new NewCustomerViewModel()
+            {
+                MembershipTypes = membershipTypes
+            };
+            return View(customerViewModel);
         }
     }
 }

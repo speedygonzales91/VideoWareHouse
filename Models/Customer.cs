@@ -16,6 +16,8 @@ namespace VideoProject.Models
         //Navigation Property
         public MembershipType MembershipType { get; set; }
         //Foreign key
+
+        [Display(Name= "Membership Type")]
         public byte MembershipTypeId { get; set; }
 
         [Display(Name = "Date of Birth")]

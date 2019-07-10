@@ -53,5 +53,11 @@ namespace VideoProject.Controllers
             };
             return View(customerViewModel);
         }
+
+        [System.Web.Http.HttpPost]
+        public ActionResult Create(Customer customer)
+        {
+            return View();
+        }
     }
 }

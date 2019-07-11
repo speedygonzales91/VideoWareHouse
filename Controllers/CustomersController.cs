@@ -57,6 +57,16 @@ namespace VideoProject.Controllers
         [System.Web.Http.HttpPost]
         public ActionResult Save(Customer customer)
         {
+            if (!ModelState.IsValid)
+            {
+                var notValidViewModel = new CustomerFormViewModel()
+                {
+                    Customer = customer,
+                    MembershipTypes = _context.MembershipTypes.ToList()
+                };
+                return View("New", notValidViewModel);
+            }
+
             if (customer.Id == 0)
             {
                 _context.Customers.Add(customer);

@@ -96,6 +96,8 @@ namespace VideoProject.Controllers
             };
             return View("MovieSave", movieViewModel);
         }
+
+        [ValidateAntiForgeryToken]
         [System.Web.Http.HttpPost]
         public ActionResult Save (Movie movie)
         {

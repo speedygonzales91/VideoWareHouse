@@ -91,6 +91,7 @@ namespace VideoProject.Controllers
             var genres = _context.Genres.ToList();
             var movieViewModel = new MovieFormViewModel()
             {
+                Movie = new Movie(),
                 Genres = genres
             };
             return View("MovieSave", movieViewModel);
@@ -98,6 +99,17 @@ namespace VideoProject.Controllers
         [System.Web.Http.HttpPost]
         public ActionResult Save (Movie movie)
         {
+            if (!ModelState.IsValid)
+            {
+                var notValidModel = new MovieFormViewModel()
+                {
+                    Movie = movie,
+                    Genres = _context.Genres.ToList()
+                };
+
+                return View("MovieSave", notValidModel);
+            }
+
             if (movie.Id == 0)
             {
                 _context.Movies.Add(movie);

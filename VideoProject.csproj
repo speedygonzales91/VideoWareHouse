@@ -229,6 +229,10 @@
     <Compile Include="Migrations\201907101134534_Update Models - Customer.Designer.cs">
       <DependentUpon>201907101134534_Update Models - Customer.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201907131441322_Update movie model with new fields.cs" />
+    <Compile Include="Migrations\201907131441322_Update movie model with new fields.Designer.cs">
+      <DependentUpon>201907131441322_Update movie model with new fields.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
     <Compile Include="Models\Customer.cs" />
@@ -361,6 +365,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201907101134534_Update Models - Customer.resx">
       <DependentUpon>201907101134534_Update Models - Customer.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201907131441322_Update movie model with new fields.resx">
+      <DependentUpon>201907131441322_Update movie model with new fields.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

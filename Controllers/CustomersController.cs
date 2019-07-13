@@ -49,6 +49,7 @@ namespace VideoProject.Controllers
             var membershipTypes = _context.MembershipTypes.ToList();
             var customerViewModel = new CustomerFormViewModel()
             {
+                Customer = new Customer(),
                 MembershipTypes = membershipTypes
             };
             return View(customerViewModel);

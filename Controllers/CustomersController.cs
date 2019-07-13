@@ -55,6 +55,7 @@ namespace VideoProject.Controllers
             return View(customerViewModel);
         }
 
+        [ValidateAntiForgeryToken]
         [System.Web.Http.HttpPost]
         public ActionResult Save(Customer customer)
         {

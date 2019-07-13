@@ -1,5 +1,6 @@
 ﻿using System;
 using System.ComponentModel.DataAnnotations;
+using VideoProject.ValidationAttributes;
 
 namespace VideoProject.Models
 {
@@ -20,6 +21,7 @@ namespace VideoProject.Models
         [Display(Name= "Membership Type")]
         public byte MembershipTypeId { get; set; }
 
+        [Min18YearsIsAMember]
         [Display(Name = "Date of Birth")]
         public DateTime? BirthDate { get; set; }
     }

@@ -26,25 +26,25 @@ namespace VideoProject.Controllers.Api
         }
 
         // get/api/customers/1
-        public CustomerDTO GetCustomer(int id)
+        public IHttpActionResult GetCustomer(int id)
         {
             var customer = _context.Customers.SingleOrDefault(c => c.Id == id);
 
             if (customer == null)
             {
-                throw new HttpResponseException(HttpStatusCode.NotFound);
+                return NotFound();
             }
 
-            return Mapper.Map<Customer,CustomerDTO>(customer);
+            return Ok(Mapper.Map<Customer,CustomerDTO>(customer));
         }
 
         // post /api/customers
         [HttpPost]
-        public CustomerDTO CreateCustomer (CustomerDTO customerDTO)
+        public IHttpActionResult CreateCustomer (CustomerDTO customerDTO)
         {
             if (!ModelState.IsValid)
             {
-                throw new HttpResponseException(HttpStatusCode.BadRequest);
+                return BadRequest();
             }
 
             var customer = Mapper.Map<CustomerDTO, Customer>(customerDTO);
@@ -55,7 +55,7 @@ namespace VideoProject.Controllers.Api
 
             customerDTO.Id = customer.Id;
 
-            return customerDTO;
+            return Created(new Uri(Request.RequestUri + "/" + customer.Id),customerDTO);
         }
 
         // put /api/customer/1

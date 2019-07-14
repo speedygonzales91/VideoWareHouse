@@ -19,7 +19,7 @@ namespace VideoProject.DTOs
 
         public byte MembershipTypeId { get; set; }
 
-        [Min18YearsIsAMember]
+       // [Min18YearsIsAMember]
         public DateTime? BirthDate { get; set; }
     }
 }

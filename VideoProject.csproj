@@ -183,11 +183,13 @@
     <Compile Include="App_Start\WebApiConfig.cs" />
     <Compile Include="Controllers\AccountController.cs" />
     <Compile Include="Controllers\Api\CustomersController.cs" />
+    <Compile Include="Controllers\Api\MoviesController.cs" />
     <Compile Include="Controllers\CustomersController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\ManageController.cs" />
     <Compile Include="Controllers\MoviesController.cs" />
     <Compile Include="DTOs\CustomerDTO.cs" />
+    <Compile Include="DTOs\MovieDTO.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
@@ -246,6 +248,10 @@
     <Compile Include="Migrations\201907131515200_Initialise Genres 2.cs" />
     <Compile Include="Migrations\201907131515200_Initialise Genres 2.Designer.cs">
       <DependentUpon>201907131515200_Initialise Genres 2.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201907141142527_Initialize Movie.cs" />
+    <Compile Include="Migrations\201907141142527_Initialize Movie.Designer.cs">
+      <DependentUpon>201907141142527_Initialize Movie.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
@@ -388,6 +394,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201907131515200_Initialise Genres 2.resx">
       <DependentUpon>201907131515200_Initialise Genres 2.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201907141142527_Initialize Movie.resx">
+      <DependentUpon>201907141142527_Initialize Movie.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

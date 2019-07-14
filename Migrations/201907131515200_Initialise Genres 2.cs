@@ -7,8 +7,8 @@ namespace VideoProject.Migrations
     {
         public override void Up()
         {
-            Sql("INSERT INTO Genres (Name) VALUES ('Thriller')");
-            Sql("INSERT INTO Genres (Name) VALUES ('Comedy')");
+            Sql("INSERT INTO Genres (Id, Name) VALUES (1, 'Thriller')");
+            Sql("INSERT INTO Genres (Id, Name) VALUES (2, 'Comedy')");
         }
         
         public override void Down()

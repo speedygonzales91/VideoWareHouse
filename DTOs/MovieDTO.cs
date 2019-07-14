@@ -27,6 +27,6 @@ namespace VideoProject.DTOs
 
 
         [Required]
-        public int GenreId { get; set; }
+        public byte GenreId { get; set; }
     }
 }

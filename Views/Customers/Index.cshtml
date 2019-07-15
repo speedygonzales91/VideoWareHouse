@@ -7,29 +7,36 @@
 <h2>Customers</h2>
 
 <table id="customers" class="table table-bordered table-condensed">
-    <tr>
-        <th>Customer</th>
-        <th>Discount rate</th>
-        <th>Discount name</th>
-        <th>Delete</th>
-    </tr>
-    @foreach (var cust in Model)
-    {
+    <thead>
         <tr>
-            <td>@Html.ActionLink(@cust.Name.ToString(), "Edit/" + cust.Id.ToString(), "Customers")</td>
-            <td>@cust.MembershipType.DiscountRate%</td>
-            <td>@cust.MembershipType.Name</td>
-            <td>
-                <button data-customer-id="@cust.Id" class="btn-link js-delete">Delete</button>
-            </td>
+            <th>Customer</th>
+            <th>Discount rate</th>
+            <th>Discount name</th>
+            <th>Delete</th>
         </tr>
-    }
+    </thead>
+    <tbody>
+        @foreach (var cust in Model)
+        {
+            <tr>
+                <td>@Html.ActionLink(@cust.Name.ToString(), "Edit/" + cust.Id.ToString(), "Customers")</td>
+                <td>@cust.MembershipType.DiscountRate%</td>
+                <td>@cust.MembershipType.Name</td>
+                <td>
+                    <button data-customer-id="@cust.Id" class="btn-link js-delete">Delete</button>
+                </td>
+            </tr>
+        }
+    </tbody>
+
 </table>
 
 @section scripts {
     <script>
 
         $(document).ready(function () {
+            $("#customers").DataTable();
+
             $("#customers").on("click",".js-delete", function () {
                 var button = $(this);
 

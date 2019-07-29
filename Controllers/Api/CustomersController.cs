@@ -3,6 +3,7 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Net;
+using System.Data.Entity;
 using System.Net.Http;
 using System.Web.Http;
 using VideoProject.DTOs;
@@ -22,7 +23,11 @@ namespace VideoProject.Controllers.Api
         // get/api/customers
         public IEnumerable<CustomerDTO> GetCustomers()
         {
-            return _context.Customers.ToList().Select(Mapper.Map<Customer,CustomerDTO>);
+            return _context.Customers.
+                Include(c => c.MembershipType).
+                ToList().
+                Select(Mapper.Map<Customer, CustomerDTO>);
+
         }
 
         // get/api/customers/1

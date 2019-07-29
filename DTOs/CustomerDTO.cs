@@ -17,6 +17,9 @@ namespace VideoProject.DTOs
         public bool IsSubscribedToNewsLetter { get; set; }
 
 
+        public MembershipDTO Membership { get; set; }
+
+
         public byte MembershipTypeId { get; set; }
 
        // [Min18YearsIsAMember]

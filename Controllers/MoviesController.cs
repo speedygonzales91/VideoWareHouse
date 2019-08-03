@@ -26,8 +26,13 @@ namespace VideoProject.Controllers
         //GET: Movies
         public ActionResult Index()
         {
-            var movies = _context.Movies.Include(g => g.Genre).ToList();
-            return View(movies);
+            if (User.IsInRole(RoleName.CanManageMovies))
+            {
+               // var movies = _context.Movies.Include(g => g.Genre).ToList();
+                return View();
+            }
+
+            return View("ReadOnlyIndex");
         }
 
         // GET: Movies/Random
@@ -86,6 +91,7 @@ namespace VideoProject.Controllers
             return HttpNotFound();
         }
 
+        [Authorize(Roles = RoleName.CanManageMovies)]
         public ActionResult New()
         {
             var genres = _context.Genres.ToList();

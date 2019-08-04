@@ -9,6 +9,7 @@ using System.Data.Entity;
 
 namespace VideoProject.Controllers
 {
+    [Authorize(Roles = RoleName.CanManageMovies)]
     public class MoviesController : Controller
     {
         private ApplicationDbContext _context;
@@ -24,6 +25,7 @@ namespace VideoProject.Controllers
         }
 
         //GET: Movies
+        [AllowAnonymous]
         public ActionResult Index()
         {
             if (User.IsInRole(RoleName.CanManageMovies))
@@ -91,7 +93,7 @@ namespace VideoProject.Controllers
             return HttpNotFound();
         }
 
-        [Authorize(Roles = RoleName.CanManageMovies)]
+        //[Authorize(Roles = RoleName.CanManageMovies)]
         public ActionResult New()
         {
             var genres = _context.Genres.ToList();

@@ -9,6 +9,7 @@ namespace VideoProject
         {
             filters.Add(new HandleErrorAttribute());
             filters.Add(new AuthorizeAttribute()); //this will apply for all controller
+            filters.Add(new RequireHttpsAttribute()); //only with https connection will work
         }
     }
 }
